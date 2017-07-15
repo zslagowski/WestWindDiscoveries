@@ -10,24 +10,34 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header text-center">
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php gemm_framework_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<div class="text-center gemm-post-featured-img"><?php the_post_thumbnail(); ?></div>
+		<?php
+		if ( 'post' === get_post_type() ) : ?>
+		<div class="gemm-front-posts-meta-single text-center">
+			<div class="gemm-front-posts-meta"><?php gemm_framework_posted_on(); ?></div>
+		</div><!-- .entry-meta -->
+		<?php
+		endif;
+		?>
+
+		<div class="gemm-front-posts-meta-single text-center">
+			<div class="gemm-front-posts-meta"><?php the_field('wwd_dates'); ?></div>
+			<div class="gemm-front-posts-meta"><?php the_field('wwd_location'); ?></div>
+			<div class="gemm-front-posts-meta"><?php the_field('wwd_grade_level'); ?></div>
+			<div class="gemm-front-posts-meta"><?php the_field('wwd_time'); ?></div>
+		</div>
+
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */

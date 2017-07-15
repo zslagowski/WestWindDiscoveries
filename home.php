@@ -3,7 +3,7 @@
 <section class="gemm-home-container">
   <div class="container">
 
-    <h1 class="text-center gemm-blog-page-header">Recent Posts</h1>
+    <h1 class="text-center gemm-page-entry-title">Blog</h1>
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -13,6 +13,7 @@
             <div class="gemm-front-posts-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
             <div class="gemm-front-posts-meta"><?php echo get_the_date(); ?> | <?php the_category( ' | '); ?></div>
             <div class="gemm-front-posts-excerpt"><?php the_excerpt(); ?></div>
+            <div class="gemm-events-classes-read-more text-right"><a href="<?php the_permalink(); ?>">Learn More >>></div>
           </div>
       </div>
 

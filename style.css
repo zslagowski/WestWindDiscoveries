@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -94,8 +94,10 @@ a {
 }
 
 a:active,
+a:focus,
 a:hover {
 	outline: 0;
+	text-decoration: none;
 }
 
 abbr[title] {
@@ -266,7 +268,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -279,6 +281,10 @@ h4,
 h5,
 h6 {
 	clear: both;
+	color: #032C66;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	margin: 2em 0;
 }
 
 p {
@@ -421,15 +427,16 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #000 #000 #000;
-	border-radius: 0;
-	background: #000;
+	border: none;
 	color: #fff;
-	font-size: 1em;
-	font-size: 1rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
+	float: right;
+	border-radius: 5px;
+	background-color: #032C66;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-size: 1.3em;
+	margin-bottom: 4em;
+  padding: .51em .5em;
 }
 
 button:hover,
@@ -467,9 +474,9 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	border: .5px solid #000;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 select {
@@ -513,7 +520,11 @@ textarea {
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	font-size: 2em;
-	font-weight: 700;
+	font-weight: 400;
+}
+
+.nav>li>a {
+	color: #fff;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
@@ -953,11 +964,11 @@ object {
 	background: rgba(255,255,255,.5);
 	position: relative;
 	z-index: 2;
-	background-color: #257E52;
+	background-color: #841412;
 }
 
 .gemm-header-logo {
-	max-width: 200px;
+	max-width: 230px;
 }
 
 div#bs-example-navbar-collapse-1 {
@@ -985,44 +996,101 @@ div#bs-example-navbar-collapse-1 {
 # Front Page
 --------------------------------------------------------------*/
 #gemm-front-header-image {
-	margin-top: -120px;
+	margin-top: 0px;
+	background-position: 50px 100px;
 }
 
 .gemm-homepage-welcome-msg-bg {
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
 	background-attachment: fixed;
-	height: 750px;
+	height: 600px;
 }
 
 .gemm-homepage-welcome-msg {
 	color: #fff;
-	padding-top: 250px;
+	padding-top: 200px;
 }
 
 .gemm-homepage-welcome-msg {
-	font-size: 3em;
+	font-size: 2em;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: .1em;
 	line-height: 1.2em;
 }
 
-#gemm-front-courses h2 {
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	border: 3px solid #000;
-	width: 180px;
-	margin: 2em auto;
+.gemm-front-page-content {
+	margin: 2em 0;
+	font-family: "Nunito";
+	font-size: 1.5em;
+}
+
+.nf-form-fields-required {
+    display: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  text-transform: uppercase;
+	color: #000;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  text-transform: uppercase;
+	color: #000;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  text-transform: uppercase;
+	color: #000;
+}
+:-moz-placeholder { /* Firefox 18- */
+  text-transform: uppercase;
+	color: #000;
+}
+
+.gemm-contact-name {
+	border-color: #000;
+}
+
+.gemm-contact-email {
+	border-color: #000;
+}
+
+input#nf-field-4 {
+    float: right;
+    border-radius: 5px;
+    background-color: #032C66;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 1.5em;
+}
+
+input#nf-field-7 {
+    float: right;
+    border-radius: 5px;
+    background-color: #032C66;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 1em;
+}
+
+.gemm-homepage-eiffel-tower-bg {
+	background-image: url('http://localhost/westwinddiscoveries/wp-content/uploads/2017/07/eiffeltower.jpg');
+	height: 600px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 #gemm-front-posts h2 {
 	text-transform: uppercase;
 	letter-spacing: .1em;
-	border: 3px solid #000;
 	width: 300px;
 	margin: 2em auto;
+}
+
+.gemm-front-posts {
+	margin: 2em 0 4em 0;
 }
 
 .gemm-front-posts-title {
@@ -1030,6 +1098,7 @@ div#bs-example-navbar-collapse-1 {
     text-transform: uppercase;
     letter-spacing: .1em;
     font-weight: 700;
+		margin-bottom: 1em;
 }
 
 .gemm-front-posts-meta {
@@ -1039,8 +1108,12 @@ div#bs-example-navbar-collapse-1 {
     text-transform: uppercase;
 }
 
+.gemm-front-posts-meta a {
+	color: #841412;
+}
+
 .gemm-front-posts-excerpt {
-    font-size: 1.5em;
+    font-size: 1em;
     text-transform: uppercase;
     letter-spacing: .1em;
     line-height: 25px;
@@ -1051,13 +1124,14 @@ div#bs-example-navbar-collapse-1 {
     font-size: 2em;
     text-transform: uppercase;
     letter-spacing: .1em;
-    background-color: #000;
+    background-color: #032C66;
     color: #fff;
-    width: 185px;
-    margin: 2em 80%;
+    width: 372px;
+    margin: 2em 70%;
     padding-right: .3em;
     padding: .5em 1em;
     font-weight: 700;
+		border-radius: 10px;
 }
 
 .gemm-front-posts-read-more a {
@@ -1086,18 +1160,24 @@ div#bs-example-navbar-collapse-1 {
 # single.php
 --------------------------------------------------------------*/
 .gemm-post-featured-img {
-	padding-bottom: 2em;
+	margin-bottom: 6em;
 }
 
 .entry-title {
 	font-size: 2.5em;
-	color: #000;
+	color: #032C66;
 	letter-spacing: .1em;
 	text-transform: uppercase;
+	margin: 3em 0;
+}
+
+.gemm-front-posts-meta-single {
+	margin-bottom: 3em;
 }
 
 .entry-content p {
 	font-size: 1.5em;
+	margin: 0 0 4em 0;
 }
 
 .comments-title {
@@ -1118,49 +1198,79 @@ h3#reply-title {
 	font-size: 1.5em;
 }
 
+.wwd-sign-up-classes-single {
+	background-color: #841412;
+	width: 100%;
+	padding: 1em 0;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-size: 2em;
+	border-radius: 10px;
+	margin-bottom: 4em;
+}
+
+.wwd-sign-up-classes-single a {
+	color: #fff;
+	text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # page.php
 --------------------------------------------------------------*/
 .gemm-page-entry-title{
 	text-transform: uppercase;
 	margin: 2em 0;
-	color: #000;
+	color: #032C66;
 	letter-spacing: .1em;
+	font-size: 3em;
 }
 
 .gemm-page-entry-content {
 	margin-bottom: 2em;
 }
 
+.gemm-front-posts-title h2 {
+	margin: 0em 0 0em 0;
+}
+
+.gemm-front-posts-title a {
+	color: #032C66;
+}
+
+.gemm-front-posts-meta {
+	color: #841412;
+}
+
+.gemm-events-classes-read-more a {
+	color: #841412;
+}
+
 /*--------------------------------------------------------------
 # home.php
 --------------------------------------------------------------*/
 
-.gemm-blog-page-header {
-	font-size: 2.5em;
-	margin-bottom: 2em;
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	color: #000;
-}
-
 .gemm-home-posts {
 	margin-bottom: 4em;
 	color: #000;
+}
+
+.gemm-home-posts .gemm-front-posts-title {
+	font-size: 3em;
+	font-weight: 400;
 }
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .site-footer {
-    background-color: #257E52;
+    background-color: #032C66;
 }
 
 .gemm-footer-icons .fa {
     font-size: 2em;
-    background-color: #000;
+    background-color: #fff;
     border-radius: 50%;
-    color: #fff;
+    color: #000;
     padding: .3em;
     margin: .5em .1em;
 }
@@ -1193,7 +1303,7 @@ h3#reply-title {
 }
 
 .gemm-footer-logo {
-	width: 110px;
+	width: 130px;
 }
 
 .entry-footer {
